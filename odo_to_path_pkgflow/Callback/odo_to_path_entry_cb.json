@@ -1,0 +1,16 @@
+{
+    "Callback": {
+        "odo_to_path_entry_cb": {
+            "Info": "",
+            "Label": "odo_to_path_entry_cb",
+            "LastUpdate": {
+                "date": "23/06/2022 at 22:02:12",
+                "user": "movai"
+            },
+            "Message": "movai_msgs/Transition",
+            "User": "",
+            "Version": "",
+            "VersionDelta": {}
+        }
+    }
+}

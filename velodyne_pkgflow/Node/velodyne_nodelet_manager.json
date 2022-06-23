@@ -1,0 +1,74 @@
+{
+    "Node": {
+        "velodyne_nodelet_manager": {
+            "Info": "Nodelet manager for velodyne nodes",
+            "Label": "velodyne_nodelet_manager",
+            "LastUpdate": {
+                "date": "28/03/2022 at 17:23:26",
+                "user": "movai"
+            },
+            "Launch": true,
+            "PackageDepends": "",
+            "Parameter": {
+                "_remappable": {
+                    "Description": "",
+                    "Type": "any",
+                    "Value": "False"
+                },
+                "num_worker_threads": {
+                    "Description": "",
+                    "Value": "0"
+                }
+            },
+            "Path": "",
+            "Persistent": "",
+            "PortsInst": {
+                "depends": {
+                    "In": {
+                        "in": {
+                            "Message": "movai_msgs/Dependency"
+                        }
+                    },
+                    "Message": "Dependency",
+                    "Package": "movai_msgs",
+                    "Template": "MovAI/Dependency"
+                },
+                "nodelet_server": {
+                    "In": {
+                        "in": {
+                            "Message": "movai_msgs/Nodelet"
+                        }
+                    },
+                    "Message": "Nodelet",
+                    "Package": "movai_msgs",
+                    "Template": "ROS1/NodeletServer"
+                },
+                "scan": {
+                    "Message": "LaserScan",
+                    "Out": {
+                        "out": {
+                            "Message": "sensor_msgs/LaserScan"
+                        }
+                    },
+                    "Package": "sensor_msgs",
+                    "Template": "ROS1/Publisher"
+                },
+                "velodyne_points": {
+                    "Message": "PointCloud2",
+                    "Out": {
+                        "out": {
+                            "Message": "sensor_msgs/PointCloud2"
+                        }
+                    },
+                    "Package": "sensor_msgs",
+                    "Template": "ROS1/Publisher"
+                }
+            },
+            "Remappable": true,
+            "Type": "ROS1/Nodelet",
+            "User": "",
+            "Version": "",
+            "VersionDelta": {}
+        }
+    }
+}

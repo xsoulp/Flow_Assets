@@ -1,0 +1,134 @@
+{
+    "Node": {
+        "move_xy": {
+            "Info": "saved!",
+            "Label": "move_xy",
+            "LastUpdate": {
+                "date": "14/06/2022 at 14:34:43",
+                "user": "movai"
+            },
+            "Launch": true,
+            "PackageDepends": "",
+            "Parameter": {
+                "distance": {
+                    "Description": "[float] The amount of distance the robot needs to translate. If the value is negative, the robot moves in the negative x direction of the base_link frame",
+                    "Type": "number",
+                    "Value": "1.0"
+                },
+                "distance_error": {
+                    "Description": "",
+                    "Type": "number",
+                    "Value": "0.1"
+                },
+                "kp": {
+                    "Description": "",
+                    "Type": "number",
+                    "Value": "1"
+                },
+                "max_vel": {
+                    "Description": "",
+                    "Type": "number",
+                    "Value": "3"
+                },
+                "target_x": {
+                    "Description": "",
+                    "Type": "number",
+                    "Value": "2"
+                },
+                "target_y": {
+                    "Description": "",
+                    "Type": "number",
+                    "Value": "2"
+                },
+                "target_z": {
+                    "Description": "",
+                    "Type": "number",
+                    "Value": "2"
+                }
+            },
+            "Path": "",
+            "Persistent": false,
+            "PortsInst": {
+                "cmd_vel": {
+                    "Info": "",
+                    "Message": "Twist",
+                    "Out": {
+                        "out": {
+                            "Message": "geometry_msgs/Twist"
+                        }
+                    },
+                    "Package": "geometry_msgs",
+                    "Template": "ROS1/Publisher"
+                },
+                "entry": {
+                    "In": {
+                        "in": {
+                            "Callback": "move_xy_entry",
+                            "Message": "movai_msgs/Transition"
+                        }
+                    },
+                    "Info": "",
+                    "Message": "Transition",
+                    "Package": "movai_msgs",
+                    "Template": "MovAI/TransitionTo"
+                },
+                "exit": {
+                    "Info": "",
+                    "Message": "Transition",
+                    "Out": {
+                        "out": {
+                            "Message": "movai_msgs/Transition"
+                        }
+                    },
+                    "Package": "movai_msgs",
+                    "Template": "MovAI/TransitionFor"
+                },
+                "loop": {
+                    "In": {
+                        "in": {
+                            "Callback": "move_xy_loop",
+                            "Message": "movai_msgs/Timer",
+                            "Parameter": {
+                                "Frequency": 10,
+                                "Oneshot": false
+                            }
+                        }
+                    },
+                    "Info": "",
+                    "Message": "Timer",
+                    "Package": "movai_msgs",
+                    "Template": "ROS1/Timer"
+                },
+                "odometry": {
+                    "In": {
+                        "in": {
+                            "Callback": "move_xy_odom_sub",
+                            "Message": "nav_msgs/Odometry"
+                        }
+                    },
+                    "Info": "",
+                    "Message": "Odometry",
+                    "Package": "nav_msgs",
+                    "Template": "ROS1/Subscriber"
+                },
+                "targets": {
+                    "In": {
+                        "in": {
+                            "Callback": "move_xy_targets_sub",
+                            "Message": "geometry_msgs/Point"
+                        }
+                    },
+                    "Info": "",
+                    "Message": "Point",
+                    "Package": "geometry_msgs",
+                    "Template": "ROS1/Subscriber"
+                }
+            },
+            "Remappable": true,
+            "Type": "MovAI/State",
+            "User": "",
+            "Version": "",
+            "VersionDelta": {}
+        }
+    }
+}

@@ -1,0 +1,104 @@
+{
+    "Node": {
+        "velodyne_cloud": {
+            "Info": "velodyne nodelet pointcloud",
+            "Label": "velodyne_cloud",
+            "LastUpdate": {
+                "date": "18/05/2022 at 14:09:55",
+                "user": "movai"
+            },
+            "Launch": true,
+            "PackageDepends": "",
+            "Parameter": {
+                "calibration": {
+                    "Description": "",
+                    "Type": "any",
+                    "Value": "/opt/ros/${ROS_DISTRO}/share/velodyne_pointcloud/params/VLP16db.yaml"
+                },
+                "fixed_frame": {
+                    "Description": "",
+                    "Type": "any",
+                    "Value": "scan_omni"
+                },
+                "max_range": {
+                    "Description": "",
+                    "Type": "any",
+                    "Value": "130"
+                },
+                "min_range": {
+                    "Description": "",
+                    "Type": "any",
+                    "Value": "0.4"
+                },
+                "model": {
+                    "Description": "",
+                    "Type": "any",
+                    "Value": "VLP16"
+                },
+                "organize_cloud": {
+                    "Description": "",
+                    "Type": "any",
+                    "Value": "False"
+                },
+                "target_frame": {
+                    "Description": "",
+                    "Type": "any",
+                    "Value": "scan_omni"
+                },
+                "view_direction": {
+                    "Description": "",
+                    "Type": "any",
+                    "Value": "0.0"
+                },
+                "view_width": {
+                    "Description": "",
+                    "Type": "any",
+                    "Value": "6.28318530718"
+                }
+            },
+            "Path": "velodyne_pointcloud/TransformNodelet",
+            "Persistent": false,
+            "PortsInst": {
+                "nodelet_client": {
+                    "Info": "",
+                    "Message": "Nodelet",
+                    "Out": {
+                        "out": {
+                            "Message": "movai_msgs/Nodelet"
+                        }
+                    },
+                    "Package": "movai_msgs",
+                    "Template": "ROS1/NodeletClient"
+                },
+                "velodyne_pkts": {
+                    "In": {
+                        "in": {
+                            "Callback": "place_holder",
+                            "Message": "velodyne_msgs/VelodyneScan"
+                        }
+                    },
+                    "Info": "",
+                    "Message": "VelodyneScan",
+                    "Package": "velodyne_msgs",
+                    "Template": "ROS1/Subscriber"
+                },
+                "velodyne_points": {
+                    "Info": "",
+                    "Message": "PointCloud2",
+                    "Out": {
+                        "out": {
+                            "Message": "sensor_msgs/PointCloud2"
+                        }
+                    },
+                    "Package": "sensor_msgs",
+                    "Template": "ROS1/Publisher"
+                }
+            },
+            "Remappable": true,
+            "Type": "ROS1/Nodelet",
+            "User": "",
+            "Version": "",
+            "VersionDelta": {}
+        }
+    }
+}

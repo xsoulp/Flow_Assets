@@ -1,0 +1,6 @@
+Flow:velodyne
+Node:velodyne_cloud
+Node:velodyne_driver
+Node:velodyne_laserscan
+Node:velodyne_node
+Node:nodelet_manager

@@ -1,0 +1,374 @@
+{
+    "Flow": {
+        "drone_sim_drivers": {
+            "Container": {
+                "ignition_camera_rgbD": {
+                    "ContainerFlow": "ignition_camera_rgbD",
+                    "ContainerLabel": "ignition_camera_rgbD",
+                    "Parameter": {
+                        "frame_name": {
+                            "Type": "any",
+                            "Value": "base_link"
+                        },
+                        "robot_name": {
+                            "Type": "any",
+                            "Value": "$(flow robot_name)"
+                        },
+                        "sensor_name": {
+                            "Type": "any",
+                            "Value": "camera_front"
+                        }
+                    },
+                    "Visualization": {
+                        "x": {
+                            "Value": 668.5356271891203
+                        },
+                        "y": {
+                            "Value": 160.94866918358312
+                        }
+                    }
+                },
+                "ignition_lidar_3D": {
+                    "ContainerFlow": "ignition_lidar_3D",
+                    "ContainerLabel": "ignition_lidar_3D",
+                    "Parameter": {
+                        "frame_name": {
+                            "Type": "any",
+                            "Value": "base_link"
+                        },
+                        "robot_name": {
+                            "Type": "any",
+                            "Value": "$(flow robot_name)"
+                        },
+                        "sensor_name": {
+                            "Type": "any",
+                            "Value": "scan_omni"
+                        }
+                    },
+                    "Visualization": {
+                        "x": {
+                            "Value": 506
+                        },
+                        "y": {
+                            "Value": 175
+                        }
+                    }
+                },
+                "ignition_multicopter": {
+                    "ContainerFlow": "ignition_multicopter",
+                    "ContainerLabel": "ignition_multicopter",
+                    "Parameter": {
+                        "remap_topic": {
+                            "Type": "any",
+                            "Value": "drone_controller"
+                        },
+                        "robot_name": {
+                            "Type": "any",
+                            "Value": "$(flow robot_name)"
+                        }
+                    },
+                    "Visualization": {
+                        "x": {
+                            "Value": 821.8069849115897
+                        },
+                        "y": {
+                            "Value": 156.41041157133222
+                        }
+                    }
+                },
+                "imu": {
+                    "ContainerFlow": "ignition_imu",
+                    "ContainerLabel": "imu",
+                    "Parameter": {
+                        "frame_name": {
+                            "Type": "any",
+                            "Value": "base_link"
+                        },
+                        "remap_topic": {
+                            "Type": "any",
+                            "Value": "imu"
+                        },
+                        "robot_name": {
+                            "Type": "any",
+                            "Value": "$(flow robot_name)"
+                        },
+                        "sensor_name": {
+                            "Type": "any",
+                            "Value": "imu_sensor"
+                        }
+                    },
+                    "Visualization": {
+                        "x": {
+                            "Value": 490.00000000000006
+                        },
+                        "y": {
+                            "Value": 415
+                        }
+                    }
+                },
+                "init_sim": {
+                    "ContainerFlow": "ignition_sim_base",
+                    "ContainerLabel": "init_sim",
+                    "Visualization": {
+                        "x": {
+                            "Value": 0.013801129150390626
+                        },
+                        "y": {
+                            "Value": 0.019934574381510417
+                        }
+                    }
+                },
+                "robot_state": {
+                    "ContainerFlow": "ignition_robot_state",
+                    "ContainerLabel": "robot_state",
+                    "Parameter": {
+                        "robot_name": {
+                            "Type": "any",
+                            "Value": "$(flow robot_name)"
+                        }
+                    },
+                    "Visualization": {
+                        "x": {
+                            "Value": 326.59782903525183
+                        },
+                        "y": {
+                            "Value": 165.36954991735155
+                        }
+                    }
+                }
+            },
+            "Description": "",
+            "ExposedPorts": {
+                "__ignition_camera_rgb": {
+                    "camera_front": [
+                        "output/camera_info/out",
+                        "output/image_raw/out"
+                    ]
+                },
+                "__ignition_camera_rgbD": {
+                    "camera_gimbal": [
+                        "output/camera_info/out",
+                        "output/depth_image/points/out",
+                        "output/depth_image/out",
+                        "output/image/out"
+                    ],
+                    "ignition_camera_rgbD": [
+                        "output/camera_info/out",
+                        "output/depth_image/points/out",
+                        "output/depth_image/out",
+                        "output/image/out"
+                    ]
+                },
+                "__ignition_diffdrive": {
+                    "diffdrive": [
+                        "outputs/odom/out",
+                        "outputs/cmd_vel/in"
+                    ]
+                },
+                "__ignition_imu": {
+                    "imu": [
+                        "output/imu/out"
+                    ]
+                },
+                "__ignition_joint_cmd_controller": {
+                    "gimbal_pan": [
+                        "input_joint/cmd/in"
+                    ],
+                    "gimbal_tilt": [
+                        "input_joint/cmd/in"
+                    ]
+                },
+                "__ignition_lidar_2D": {
+                    "planar_laser": [
+                        "output/scan/out"
+                    ]
+                },
+                "__ignition_lidar_3D": {
+                    "ignition_lidar_3D": [
+                        "output/points/out",
+                        "output/scan/out"
+                    ],
+                    "velodyne": [
+                        "output/scan/out",
+                        "output/points/out"
+                    ]
+                },
+                "__ignition_multicopter": {
+                    "ignition_multicopter": [
+                        "outputs/cmd_vel/in",
+                        "outputs/odom/out"
+                    ]
+                },
+                "__ignition_robot_state": {
+                    "robot_state": [
+                        "remap/robot_pose/out"
+                    ]
+                },
+                "__ignition_sim_base": {
+                    "init_sim": [
+                        "get_params/entry/in"
+                    ]
+                },
+                "wait_state": {
+                    "wait_ready": [
+                        "exit/out"
+                    ]
+                }
+            },
+            "Info": "",
+            "Label": "drone_sim_drivers",
+            "LastUpdate": {
+                "date": "13/06/2022 at 10:16:40",
+                "user": "movai"
+            },
+            "Layers": {},
+            "Links": {
+                "1670c74f-8929-4d97-a151-4cea90660e21": {
+                    "Dependency": 0,
+                    "From": "load_cameras/exit/out",
+                    "To": "load_controllers/entry/in"
+                },
+                "1a1b7f6a-4fe7-47a5-a3f6-59b2929c771c": {
+                    "Dependency": 0,
+                    "From": "init_sim__transition_out/exit/out",
+                    "To": "load_sensors/entry/in"
+                },
+                "2705d794-be8e-415a-accc-80c768de9289": {
+                    "Dependency": 0,
+                    "From": "init_sim__transition_out/exit/out",
+                    "To": "robot_state__init/entry/in"
+                },
+                "49b260cd-c817-4c13-beb1-a1fb883df13e": {
+                    "Dependency": 0,
+                    "From": "load_sensors/exit/out",
+                    "To": "ignition_lidar_3D__dependency/entry/in"
+                },
+                "7330e9f6-c6a4-4e5f-a462-096ecf2a4a4a": {
+                    "Dependency": 0,
+                    "From": "load_sensors/exit/out",
+                    "To": "load_cameras/entry/in"
+                },
+                "ac10d17e-76e0-4642-8b9b-5c4431f4e1ce": {
+                    "Dependency": 0,
+                    "From": "load_controllers/exit/out",
+                    "To": "wait_ready/entry/in"
+                },
+                "bf62ca3b-90ac-4fd7-a631-5839c46667fb": {
+                    "Dependency": 0,
+                    "From": "load_controllers/exit/out",
+                    "To": "ignition_multicopter__dependency/entry/in"
+                },
+                "dcddafab-db58-4790-ba3d-ca02b4be8673": {
+                    "Dependency": 0,
+                    "From": "load_cameras/exit/out",
+                    "To": "ignition_camera_rgbD__dependency/entry/in"
+                },
+                "f2eea38a-54fb-4f41-a851-4c154116c473": {
+                    "Dependency": 0,
+                    "From": "load_sensors/exit/out",
+                    "To": "imu__dependency/entry/in"
+                }
+            },
+            "NodeInst": {
+                "load_cameras": {
+                    "Launch": true,
+                    "NodeLabel": "load_cameras",
+                    "NodeLayers": [],
+                    "Parameter": {
+                        "wait_time": {
+                            "Type": "any",
+                            "Value": "0.2"
+                        }
+                    },
+                    "Persistent": false,
+                    "Remappable": true,
+                    "Template": "wait_state",
+                    "Visualization": {
+                        "x": {
+                            "Value": 0.034180769856770835
+                        },
+                        "y": {
+                            "Value": 0.01983325398763021
+                        }
+                    }
+                },
+                "load_controllers": {
+                    "Launch": true,
+                    "NodeLabel": "load_controllers",
+                    "NodeLayers": [],
+                    "Parameter": {
+                        "wait_time": {
+                            "Type": "any",
+                            "Value": "0.2"
+                        }
+                    },
+                    "Persistent": false,
+                    "Remappable": true,
+                    "Template": "wait_state",
+                    "Visualization": {
+                        "x": {
+                            "Value": 0.04509110310872396
+                        },
+                        "y": {
+                            "Value": 0.019832088216145835
+                        }
+                    }
+                },
+                "load_sensors": {
+                    "Launch": true,
+                    "NodeLabel": "load_sensors",
+                    "NodeLayers": [],
+                    "Parameter": {
+                        "wait_time": {
+                            "Type": "any",
+                            "Value": "0.2"
+                        }
+                    },
+                    "Persistent": false,
+                    "Remappable": true,
+                    "Template": "wait_state",
+                    "Visualization": {
+                        "x": {
+                            "Value": 352.3303527832031
+                        },
+                        "y": {
+                            "Value": 302.95362854003906
+                        }
+                    }
+                },
+                "wait_ready": {
+                    "Launch": true,
+                    "NodeLabel": "wait_ready",
+                    "NodeLayers": [],
+                    "Parameter": {
+                        "wait_time": {
+                            "Type": "any",
+                            "Value": "0.2"
+                        }
+                    },
+                    "Persistent": false,
+                    "Remappable": true,
+                    "Template": "wait_state",
+                    "Visualization": {
+                        "x": {
+                            "Value": 0.05754270222981771
+                        },
+                        "y": {
+                            "Value": 0.01983626403808594
+                        }
+                    }
+                }
+            },
+            "Parameter": {
+                "robot_name": {
+                    "Description": "var to define the robot name used on the Ignition Simulator",
+                    "Type": "any",
+                    "Value": "X4"
+                }
+            },
+            "User": "",
+            "Version": "",
+            "VersionDelta": {}
+        }
+    }
+}

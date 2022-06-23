@@ -1,0 +1,16 @@
+{
+    "Callback": {
+        "move_xy_entry": {
+            "Info": "",
+            "Label": "move_xy_entry",
+            "LastUpdate": {
+                "date": "21/06/2022 at 09:26:44",
+                "user": "movai"
+            },
+            "Message": "movai_msgs/Transition",
+            "User": "",
+            "Version": "",
+            "VersionDelta": {}
+        }
+    }
+}

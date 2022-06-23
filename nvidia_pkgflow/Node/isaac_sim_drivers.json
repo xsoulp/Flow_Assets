@@ -1,0 +1,67 @@
+{
+    "Node": {
+        "isaac_sim_drivers": {
+            "Info": "",
+            "Label": "isaac_sim_drivers",
+            "LastUpdate": {
+                "date": "15/06/2022 at 13:57:27",
+                "user": "movai"
+            },
+            "Launch": true,
+            "PackageDepends": "",
+            "Path": "",
+            "Persistent": false,
+            "PortsInst": {
+                "image_left": {
+                    "Info": "",
+                    "Message": "Image",
+                    "Out": {
+                        "out": {
+                            "Message": "sensor_msgs/Image"
+                        }
+                    },
+                    "Package": "sensor_msgs",
+                    "Template": "ROS1/Publisher"
+                },
+                "image_right": {
+                    "Info": "",
+                    "Message": "Image",
+                    "Out": {
+                        "out": {
+                            "Message": "sensor_msgs/Image"
+                        }
+                    },
+                    "Package": "sensor_msgs",
+                    "Template": "ROS1/Publisher"
+                },
+                "info_left": {
+                    "Info": "",
+                    "Message": "CameraInfo",
+                    "Out": {
+                        "out": {
+                            "Message": "sensor_msgs/CameraInfo"
+                        }
+                    },
+                    "Package": "sensor_msgs",
+                    "Template": "ROS1/Publisher"
+                },
+                "info_right": {
+                    "Info": "",
+                    "Message": "CameraInfo",
+                    "Out": {
+                        "out": {
+                            "Message": "sensor_msgs/CameraInfo"
+                        }
+                    },
+                    "Package": "sensor_msgs",
+                    "Template": "ROS1/Publisher"
+                }
+            },
+            "Remappable": true,
+            "Type": "MovAI/Node",
+            "User": "",
+            "Version": "",
+            "VersionDelta": {}
+        }
+    }
+}

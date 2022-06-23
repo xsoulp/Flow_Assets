@@ -1,0 +1,69 @@
+{
+    "Node": {
+        "velodyne_laserscan": {
+            "Info": "velodyne laserscan nodelet",
+            "Label": "velodyne_laserscan",
+            "LastUpdate": {
+                "date": "18/05/2022 at 14:00:56",
+                "user": "movai"
+            },
+            "Launch": "",
+            "PackageDepends": "",
+            "Parameter": {
+                "resolution": {
+                    "Description": "",
+                    "Type": "any",
+                    "Value": "0.007"
+                },
+                "ring": {
+                    "Description": "",
+                    "Type": "any",
+                    "Value": "8"
+                }
+            },
+            "Path": "velodyne_laserscan/LaserScanNodelet",
+            "Persistent": "",
+            "PortsInst": {
+                "nodelet_client": {
+                    "Info": "",
+                    "Message": "Nodelet",
+                    "Out": {
+                        "out": {
+                            "Message": "movai_msgs/Nodelet"
+                        }
+                    },
+                    "Package": "movai_msgs",
+                    "Template": "ROS1/NodeletClient"
+                },
+                "pointcloud": {
+                    "In": {
+                        "in": {
+                            "Callback": "place_holder",
+                            "Message": "sensor_msgs/PointCloud2"
+                        }
+                    },
+                    "Info": "",
+                    "Message": "PointCloud2",
+                    "Package": "sensor_msgs",
+                    "Template": "ROS1/Subscriber"
+                },
+                "scan": {
+                    "Info": "",
+                    "Message": "PointCloud2",
+                    "Out": {
+                        "out": {
+                            "Message": "sensor_msgs/PointCloud2"
+                        }
+                    },
+                    "Package": "sensor_msgs",
+                    "Template": "ROS1/Publisher"
+                }
+            },
+            "Remappable": "",
+            "Type": "ROS1/Nodelet",
+            "User": "",
+            "Version": "",
+            "VersionDelta": {}
+        }
+    }
+}

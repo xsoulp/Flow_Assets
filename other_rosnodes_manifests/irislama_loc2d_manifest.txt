@@ -1,0 +1,89 @@
+Services
+request_nomotion_update (std_srvs/Empty)
+global_localization (std_srvs/Empty)
+
+
+Published Topics
+
+pose (geometry_msgs/PoseWithCovarianceStamped)
+some info about pose
+
+
+some info about the map
+
+
+Subscribed Topics
+
+map (nav_msgs/OccupancyGrid)
+scan (sensor_msgs/LaserScan)
+scan laser input
+
+initialpose (geometry_msgs::PoseWithCovariance)
+the first pose 
+
+Parameters
+
+global_frame_id (string, default: "map")
+info
+
+odom_frame_id (string, default: "odom")
+info
+
+base_frame_id (string, default: "base_link")
+info
+
+scan_topic (string, default: "scan")
+info
+
+transform_tolerance (float, default: 0.1)
+info
+
+temporal_update (string, default: 0.0)
+info
+
+publish_tf (bool, default: true)
+info
+
+use_map_topic (bool, default: false)
+info
+
+first_map_only (bool, default: false)
+info
+
+use_pose_on_new_map (bool, default: false)
+info
+
+use_map_sideloading (bool, default: false)
+info
+
+map_sideloading_dir (string, default: "")
+info
+
+force_update_on_initial_pose (bool, default: false)
+info
+
+
+
+initial_pos_x (float, default: 0.0)
+initial_pos_y (float, default: 0.0)
+initial_pos_a (float, default: 0.0)
+
+d_thresh (float, default: 0.1)
+a_thresh (float, default: 0.2)
+l2_max (float, default: 0.5)
+strategy (string, default: "gn")
+
+covariance_blend (float, default: 0.0)
+
+patch_size (int, default: 32)
+gloc_particles (int, default: 3000)
+
+gloc_iters (int, default: 20)
+gloc_thresh (float, default: 0.15)
+
+mrange (string, default: 0.0)
+
+beam_step (int, default: 1)
+make sure the beam step is positive
+ 
+do_global_loc (bool, default: false)

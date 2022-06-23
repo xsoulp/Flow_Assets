@@ -1,0 +1,128 @@
+{
+    "Node": {
+        "velodyne_driver": {
+            "Info": "velodyne nodelet DRIVER",
+            "Label": "velodyne_driver",
+            "LastUpdate": {
+                "date": "18/05/2022 at 14:07:33",
+                "user": "movai"
+            },
+            "Launch": "",
+            "PackageDepends": "",
+            "Parameter": {
+                "cut_angle": {
+                    "Description": "",
+                    "Type": "any",
+                    "Value": "-0.01"
+                },
+                "device_ip": {
+                    "Description": "",
+                    "Type": "any",
+                    "Value": "\"\""
+                },
+                "enabled": {
+                    "Description": "",
+                    "Type": "any",
+                    "Value": "True"
+                },
+                "frame_id": {
+                    "Description": "",
+                    "Type": "any",
+                    "Value": "scan_omni"
+                },
+                "gps_time": {
+                    "Description": "",
+                    "Type": "any",
+                    "Value": "False"
+                },
+                "model": {
+                    "Description": "",
+                    "Type": "any",
+                    "Value": "VLP16"
+                },
+                "pcap": {
+                    "Description": "",
+                    "Type": "any",
+                    "Value": "\"\""
+                },
+                "port": {
+                    "Description": "",
+                    "Type": "any",
+                    "Value": "2368"
+                },
+                "read_fast": {
+                    "Description": "",
+                    "Type": "any",
+                    "Value": "False"
+                },
+                "read_once": {
+                    "Description": "",
+                    "Type": "any",
+                    "Value": "False"
+                },
+                "repeat_delay": {
+                    "Description": "",
+                    "Type": "any",
+                    "Value": "0.0"
+                },
+                "rpm": {
+                    "Description": "",
+                    "Type": "any",
+                    "Value": "600.0"
+                },
+                "time_offset": {
+                    "Description": "",
+                    "Type": "any",
+                    "Value": "0.0"
+                },
+                "timestamp_first_packet": {
+                    "Description": "",
+                    "Type": "any",
+                    "Value": "False"
+                }
+            },
+            "Path": "velodyne_driver/DriverNodelet",
+            "Persistent": "",
+            "PortsInst": {
+                "diagnostics": {
+                    "Info": "",
+                    "Message": "DiagnosticStatus",
+                    "Out": {
+                        "out": {
+                            "Message": "diagnostic_msgs/DiagnosticStatus"
+                        }
+                    },
+                    "Package": "diagnostic_msgs",
+                    "Template": "ROS1/Publisher"
+                },
+                "nodelet_client": {
+                    "Info": "",
+                    "Message": "Nodelet",
+                    "Out": {
+                        "out": {
+                            "Message": "movai_msgs/Nodelet"
+                        }
+                    },
+                    "Package": "movai_msgs",
+                    "Template": "ROS1/NodeletClient"
+                },
+                "velodyne_pkts": {
+                    "Info": "",
+                    "Message": "VelodyneScan",
+                    "Out": {
+                        "out": {
+                            "Message": "velodyne_msgs/VelodyneScan"
+                        }
+                    },
+                    "Package": "velodyne_msgs",
+                    "Template": "ROS1/Publisher"
+                }
+            },
+            "Remappable": "",
+            "Type": "ROS1/Nodelet",
+            "User": "",
+            "Version": "",
+            "VersionDelta": {}
+        }
+    }
+}

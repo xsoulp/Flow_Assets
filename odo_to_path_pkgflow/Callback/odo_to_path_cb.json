@@ -1,0 +1,30 @@
+{
+    "Callback": {
+        "odo_to_path_cb": {
+            "Info": "",
+            "Label": "odo_to_path_cb",
+            "LastUpdate": {
+                "date": "23/06/2022 at 22:03:15",
+                "user": "movai"
+            },
+            "Message": "nav_msgs/Odometry",
+            "Py3Lib": {
+                "Path": {
+                    "Class": "Path",
+                    "Module": "nav_msgs.msg"
+                },
+                "PoseStamped": {
+                    "Class": "PoseStamped",
+                    "Module": "geometry_msgs.msg"
+                },
+                "rospy": {
+                    "Class": false,
+                    "Module": "rospy"
+                }
+            },
+            "User": "",
+            "Version": "",
+            "VersionDelta": {}
+        }
+    }
+}

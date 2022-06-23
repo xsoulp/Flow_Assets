@@ -1,0 +1,119 @@
+{
+    "Node": {
+        "velodyne_node": {
+            "Info": "",
+            "Label": "velodyne_node",
+            "LastUpdate": {
+                "date": "18/05/2022 at 11:15:55",
+                "user": "movai"
+            },
+            "Launch": true,
+            "PackageDepends": "",
+            "Parameter": {
+                "calibration": {
+                    "Description": "",
+                    "Value": "$(find velodyne_pointcloud)/params/VLP16db.yaml"
+                },
+                "cut_angle": {
+                    "Description": "",
+                    "Value": "-0.01"
+                },
+                "device_ip": {
+                    "Description": "",
+                    "Value": ""
+                },
+                "frame_id": {
+                    "Description": "",
+                    "Value": "velodyne"
+                },
+                "gps_time": {
+                    "Description": "",
+                    "Value": "false"
+                },
+                "laserscan_resolution": {
+                    "Description": "",
+                    "Value": "0.007"
+                },
+                "laserscan_ring": {
+                    "Description": "",
+                    "Value": "-1"
+                },
+                "manager": {
+                    "Description": "",
+                    "Value": "$(arg frame_id)_nodelet_manager"
+                },
+                "max_range": {
+                    "Description": "",
+                    "Value": "130.0"
+                },
+                "min_range": {
+                    "Description": "",
+                    "Value": "0.4"
+                },
+                "organize_cloud": {
+                    "Description": "",
+                    "Value": "false"
+                },
+                "pcap": {
+                    "Description": "",
+                    "Value": "./datavlp16.pcap"
+                },
+                "port": {
+                    "Description": "",
+                    "Value": "2368"
+                },
+                "read_fast": {
+                    "Description": "",
+                    "Value": "false"
+                },
+                "read_once": {
+                    "Description": "",
+                    "Value": "false"
+                },
+                "repeat_delay": {
+                    "Description": "",
+                    "Value": "0.0"
+                },
+                "rpm": {
+                    "Description": "",
+                    "Value": "600.0"
+                },
+                "timestamp_first_packet": {
+                    "Description": "",
+                    "Value": "false"
+                }
+            },
+            "Path": "~/workspaces/USER_ROS1/lib/<please_complete_this>",
+            "Persistent": true,
+            "PortsInst": {
+                "diagnostics": {
+                    "Info": "Diagnostic status information.",
+                    "Message": "DiagnosticStatu",
+                    "Out": {
+                        "out": {
+                            "Message": "diagnostic_msgs/DiagnosticStatu"
+                        }
+                    },
+                    "Package": "diagnostic_msgs",
+                    "Template": "ROS1/Publisher"
+                },
+                "velodyne_packets": {
+                    "Info": "Velodyne data packets - typically for one entire revolution of the device) in the /velodyne frame of reference.",
+                    "Message": "VelodyneScan",
+                    "Out": {
+                        "out": {
+                            "Message": "velodyne_msgs/VelodyneScan"
+                        }
+                    },
+                    "Package": "velodyne_msgs",
+                    "Template": "ROS1/Publisher"
+                }
+            },
+            "Remappable": "",
+            "Type": "ROS1/Node",
+            "User": "",
+            "Version": "",
+            "VersionDelta": {}
+        }
+    }
+}

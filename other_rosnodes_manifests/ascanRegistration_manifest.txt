@@ -1,0 +1,27 @@
+Published Topics
+
+velodyne_cloud_2 (sensor_msgs/PointCloud2)
+
+laser_cloud_sharp (sensor_msgs/PointCloud2)
+
+laser_cloud_less_sharp (sensor_msgs/PointCloud2)
+
+laser_cloud_flat (sensor_msgs/PointCloud2)
+
+laser_cloud_less_flat (sensor_msgs/PointCloud2)
+
+laser_remove_points (sensor_msgs/PointCloud2)
+
+laser_scanid_0 (sensor_msgs/PointCloud2)
+laser_scanid_1 (sensor_msgs/PointCloud2)
+laser_scanid_15 (sensor_msgs/PointCloud2)
+
+Subscribed Topics
+
+velodyne_points (sensor_msgs/PointCloud2)
+
+
+Parameters
+scan_line (int, default: 16)
+minimum_range (double, default: 0.1)
+

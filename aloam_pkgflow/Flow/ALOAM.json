@@ -1,0 +1,128 @@
+{
+    "Flow": {
+        "ALOAM": {
+            "Description": "",
+            "ExposedPorts": {
+                "alaserMapping": {
+                    "Mapping": [
+                        "aft_mapped_path/out",
+                        "aft_mapped_to_init/out",
+                        "laser_cloud_map/out"
+                    ]
+                },
+                "ascanRegistration": {
+                    "Registration": [
+                        "velodyne_points/in"
+                    ]
+                },
+                "ascan_registration": {
+                    "registration": [
+                        "velodyne_points/in"
+                    ]
+                }
+            },
+            "Info": "",
+            "Label": "ALOAM",
+            "LastUpdate": {
+                "date": "18/05/2022 at 15:33:29",
+                "user": "movai"
+            },
+            "Layers": {},
+            "Links": {
+                "358549ee-f504-46a9-b628-c2b8d6410dfb": {
+                    "Dependency": 0,
+                    "From": "Registration/laser_cloud_sharp/out",
+                    "To": "Odometry/laser_cloud_sharp/in"
+                },
+                "3f3d1184-41cb-4673-be55-04344ef8e218": {
+                    "Dependency": 0,
+                    "From": "Registration/velodyne_cloud_2/out",
+                    "To": "Odometry/velodyne_cloud_2/in"
+                },
+                "4db83eba-edba-4657-9def-4bd9d43a03ff": {
+                    "Dependency": 0,
+                    "From": "Odometry/laser_odom_to_init/out",
+                    "To": "Mapping/laser_odom_to_init/in"
+                },
+                "5ff06d33-b9a6-4ff1-9bb3-2e1e02608909": {
+                    "Dependency": 0,
+                    "From": "Odometry/velodyne_cloud_3/out",
+                    "To": "Mapping/velodyne_cloud_3/in"
+                },
+                "63063ce4-e3b0-48e0-8564-7cac9cb71ced": {
+                    "Dependency": 0,
+                    "From": "Registration/laser_cloud_flat/out",
+                    "To": "Odometry/laser_cloud_flat/in"
+                },
+                "6bce29ff-67c5-46f0-acd5-86b6bd91bd72": {
+                    "Dependency": 0,
+                    "From": "Odometry/laser_cloud_surf_last/out",
+                    "To": "Mapping/laser_cloud_surf_last/in"
+                },
+                "97aa7ec8-249d-4e6f-b82c-3e18746ac932": {
+                    "Dependency": 0,
+                    "From": "Registration/laser_cloud_sharp/out",
+                    "To": "Mapping/laser_cloud_sharp/in"
+                },
+                "dee708e4-6ab5-485e-af65-0be3466f96a6": {
+                    "Dependency": 0,
+                    "From": "Odometry/laser_cloud_corner_last/out",
+                    "To": "Mapping/laser_cloud_corner_last/in"
+                }
+            },
+            "NodeInst": {
+                "Mapping": {
+                    "Launch": true,
+                    "NodeLabel": "Mapping",
+                    "NodeLayers": [],
+                    "Persistent": false,
+                    "Remappable": true,
+                    "Template": "alaserMapping",
+                    "Visualization": {
+                        "x": {
+                            "Value": 450.0268859863281
+                        },
+                        "y": {
+                            "Value": 199.90211486816406
+                        }
+                    }
+                },
+                "Odometry": {
+                    "Launch": true,
+                    "NodeLabel": "Odometry",
+                    "NodeLayers": [],
+                    "Persistent": false,
+                    "Remappable": true,
+                    "Template": "alaserOdometry",
+                    "Visualization": {
+                        "x": {
+                            "Value": 259.01921084167407
+                        },
+                        "y": {
+                            "Value": 127.95489747816586
+                        }
+                    }
+                },
+                "Registration": {
+                    "Launch": true,
+                    "NodeLabel": "Registration",
+                    "NodeLayers": [],
+                    "Persistent": false,
+                    "Remappable": true,
+                    "Template": "ascanRegistration",
+                    "Visualization": {
+                        "x": {
+                            "Value": 77.0892418414081
+                        },
+                        "y": {
+                            "Value": 184.38102902420462
+                        }
+                    }
+                }
+            },
+            "User": "",
+            "Version": "",
+            "VersionDelta": {}
+        }
+    }
+}

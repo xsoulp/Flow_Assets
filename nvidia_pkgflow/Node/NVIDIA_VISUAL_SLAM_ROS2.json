@@ -1,0 +1,109 @@
+{
+    "Node": {
+        "NVIDIA_VISUAL_SLAM_ROS2": {
+            "CmdLine": {
+                "args": {
+                    "Description": "",
+                    "Value": "--ros-args"
+                }
+            },
+            "EnvVar": {
+                "LD_LIBRARY_PATH": {
+                    "Description": "",
+                    "Value": "../../../../opt/mov.ai/gems_ws/my_sos:/opt/ros/foxy/lib:/opt/ros/foxy/lib/x86_64-linux-gnu"
+                },
+                "ROS_DOMAIN_ID": {
+                    "Description": "",
+                    "Value": "5"
+                }
+            },
+            "Info": "",
+            "Label": "NVIDIA_VISUAL_SLAM_ROS2",
+            "LastUpdate": {
+                "date": "14/06/2022 at 16:10:21",
+                "user": "movai"
+            },
+            "Launch": true,
+            "PackageDepends": "",
+            "Path": "../../../../opt/mov.ai/gems_ws/install/isaac_ros_visual_slam/lib/isaac_ros_visual_slam/isaac_ros_visual_slam",
+            "Persistent": false,
+            "PortsInst": {
+                "entry_dep_g": {
+                    "In": {
+                        "in": {
+                            "Message": "movai_msgs/Dependency"
+                        }
+                    },
+                    "Info": "",
+                    "Message": "Dependency",
+                    "Package": "movai_msgs",
+                    "Template": "MovAI/Dependency"
+                },
+                "left_img": {
+                    "In": {
+                        "in": {
+                            "Callback": "place_holder",
+                            "Message": "sensor_msgs/Image"
+                        }
+                    },
+                    "Info": "",
+                    "Message": "Image",
+                    "Package": "sensor_msgs",
+                    "Template": "ROS1/Subscriber"
+                },
+                "left_info": {
+                    "In": {
+                        "in": {
+                            "Callback": "place_holder",
+                            "Message": "sensor_msgs/CameraInfo"
+                        }
+                    },
+                    "Info": "",
+                    "Message": "CameraInfo",
+                    "Package": "sensor_msgs",
+                    "Template": "ROS1/Subscriber"
+                },
+                "right_img": {
+                    "In": {
+                        "in": {
+                            "Callback": "place_holder",
+                            "Message": "sensor_msgs/Image"
+                        }
+                    },
+                    "Info": "",
+                    "Message": "Image",
+                    "Package": "sensor_msgs",
+                    "Template": "ROS1/Subscriber"
+                },
+                "right_info": {
+                    "In": {
+                        "in": {
+                            "Callback": "place_holder",
+                            "Message": "sensor_msgs/CameraInfo"
+                        }
+                    },
+                    "Info": "",
+                    "Message": "CameraInfo",
+                    "Package": "sensor_msgs",
+                    "Template": "ROS1/Subscriber"
+                },
+                "slam_path": {
+                    "Info": "",
+                    "Message": "Path",
+                    "Out": {
+                        "out": {
+                            "Message": "nav_msgs/Path"
+                        }
+                    },
+                    "Package": "nav_msgs",
+                    "Template": "ROS1/Publisher"
+                }
+            },
+            "Remappable": true,
+            "Type": "ROS1/Node",
+            "User": "",
+            "Version": "",
+            "VersionDelta": {}
+        }
+    }
+}

@@ -1,0 +1,150 @@
+{
+    "Flow": {
+        "ignition_multicopter": {
+            "Description": "This Subflow is to use with the Ignition Plugin \"DiffDrive\" in the robot SDF file.",
+            "ExposedPorts": {
+                "dependency": {
+                    "dependency": [
+                        "entry/in"
+                    ],
+                    "init": [
+                        "entry/in"
+                    ]
+                },
+                "remap_sim_diffdrive": {
+                    "outputs": [
+                        "cmd_vel/in",
+                        "odom/out"
+                    ]
+                }
+            },
+            "Info": "",
+            "Label": "ignition_multicopter",
+            "LastUpdate": {
+                "date": "02/06/2022 at 17:08:35",
+                "user": "movai"
+            },
+            "Layers": {},
+            "Links": {
+                "0b6269d3-26d2-4bf5-8cfc-29d305ebe0a9": {
+                    "Dependency": 0,
+                    "From": "dependency/depends/out",
+                    "To": "ignition_parameter_bridge_cmdvel/dependency/in"
+                },
+                "5e3c500f-c7b7-4ca8-bb35-8ade7aa1875e": {
+                    "Dependency": 0,
+                    "From": "dependency/depends/out",
+                    "To": "outputs/depend/in"
+                },
+                "d65fba31-753c-4af1-b50e-359a302ac715": {
+                    "Dependency": 0,
+                    "From": "dependency/depends/out",
+                    "To": "ign_bridge_odom/dependency/in"
+                }
+            },
+            "NodeInst": {
+                "dependency": {
+                    "Launch": false,
+                    "NodeLabel": "dependency",
+                    "NodeLayers": [],
+                    "Persistent": false,
+                    "Remappable": true,
+                    "Template": "dependency",
+                    "Visualization": {
+                        "x": {
+                            "Value": 225
+                        },
+                        "y": {
+                            "Value": 186
+                        }
+                    }
+                },
+                "ign_bridge_odom": {
+                    "CmdLine": {
+                        "arg": {
+                            "Value": "/model/$(flow robot_name)/odometry@nav_msgs/Odometry[ignition.msgs.Odometry"
+                        },
+                        "remap": {
+                            "Value": "/model/$(flow robot_name)/odometry:=/$(flow remap_topic)/odom"
+                        }
+                    },
+                    "Launch": true,
+                    "NodeLabel": "ign_bridge_odom",
+                    "NodeLayers": [],
+                    "Persistent": false,
+                    "Remappable": true,
+                    "Template": "ignition_parameter_bridge",
+                    "Visualization": {
+                        "x": {
+                            "Value": 385
+                        },
+                        "y": {
+                            "Value": 355
+                        }
+                    }
+                },
+                "ignition_parameter_bridge_cmdvel": {
+                    "CmdLine": {
+                        "arg": {
+                            "Value": "/$(flow robot_name)/cmd_vel@geometry_msgs/Twist]ignition.msgs.Twist"
+                        },
+                        "remap": {
+                            "Value": "/$(flow robot_name)/cmd_vel:=/$(flow remap_topic)/cmd_vel"
+                        }
+                    },
+                    "Launch": true,
+                    "NodeLabel": "ignition_parameter_bridge_cmdvel",
+                    "NodeLayers": [],
+                    "Persistent": false,
+                    "Remappable": true,
+                    "Template": "ignition_parameter_bridge",
+                    "Visualization": {
+                        "x": {
+                            "Value": 413
+                        },
+                        "y": {
+                            "Value": 130
+                        }
+                    }
+                },
+                "outputs": {
+                    "Launch": true,
+                    "NodeLabel": "outputs",
+                    "NodeLayers": [],
+                    "Parameter": {
+                        "_namespace": {
+                            "Type": "any",
+                            "Value": "$(flow remap_topic)"
+                        }
+                    },
+                    "Persistent": false,
+                    "Remappable": false,
+                    "Template": "remap_sim_diffdrive",
+                    "Visualization": {
+                        "x": {
+                            "Value": 469.55208333333337
+                        },
+                        "y": {
+                            "Value": 240.33333333333337
+                        }
+                    }
+                }
+            },
+            "Parameter": {
+                "remap_topic": {
+                    "Description": "DiffDrive Topic base to use inside Mov.Ai\nexample:\n\nremap_topic = /diff_drive_robot\n\n-> cmd_vel --> /diff_drive_robot/cmd_vel\n-> odometry --> /diff_drive_robot/odom",
+                    "Type": "any",
+                    "Value": "drone_controller"
+                },
+                "robot_name": {
+                    "Description": "Robot Model name in Ignition Simulator",
+                    "Type": "any",
+                    "Value": "X4"
+                }
+            },
+            "User": "",
+            "Version": "",
+            "VersionDelta": {}
+        }
+    }
+}

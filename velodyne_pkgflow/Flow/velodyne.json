@@ -1,0 +1,181 @@
+{
+    "Flow": {
+        "velodyne": {
+            "Description": "Velodyne Flow",
+            "ExposedPorts": {
+                "nodelet_manager": {
+                    "nodelet_manager": [
+                        "depends/in"
+                    ]
+                },
+                "velodyne_cloud": {
+                    "pointcloud": [
+                        "velodyne_points/out"
+                    ]
+                },
+                "velodyne_driver": {
+                    "driver": [
+                        "velodyne_packets/out"
+                    ]
+                },
+                "velodyne_laserscan": {
+                    "laserscan": [
+                        "scan/out"
+                    ]
+                },
+                "velodyne_nodelet_manager": {
+                    "manager": [
+                        "laser_omni/scan/out",
+                        "velodyne_points/out",
+                        "depends/in",
+                        "scan/out"
+                    ]
+                }
+            },
+            "Info": "",
+            "Label": "velodyne",
+            "LastUpdate": {
+                "date": "18/05/2022 at 14:15:28",
+                "user": "movai"
+            },
+            "Layers": {},
+            "Links": {
+                "6b9459a0-e360-4bf3-983e-5356b1d702b7": {
+                    "Dependency": 0,
+                    "From": "pointcloud/nodelet_client/out",
+                    "To": "nodelet_manager/nodelet_server/in"
+                },
+                "857a9389-8590-4f5e-a134-d312b38ab1c0": {
+                    "Dependency": 0,
+                    "From": "driver/velodyne_pkts/out",
+                    "To": "pointcloud/velodyne_pkts/in"
+                },
+                "8615c489-1bd9-4b8d-992f-83b7ecd2084c": {
+                    "Dependency": 0,
+                    "From": "laserscan/nodelet_client/out",
+                    "To": "nodelet_manager/nodelet_server/in"
+                },
+                "a728b397-6bfa-4a9b-85ee-9b485042b4ea": {
+                    "Dependency": 0,
+                    "From": "pointcloud/velodyne_points/out",
+                    "To": "laserscan/pointcloud/in"
+                },
+                "d35905d4-917c-44b8-a85b-7bdf71307658": {
+                    "Dependency": 0,
+                    "From": "driver/nodelet_client/out",
+                    "To": "nodelet_manager/nodelet_server/in"
+                }
+            },
+            "NodeInst": {
+                "driver": {
+                    "Launch": true,
+                    "NodeLabel": "driver",
+                    "NodeLayers": [],
+                    "Parameter": {
+                        "frame_id": {
+                            "Type": "any",
+                            "Value": "$(flow frame_id)"
+                        },
+                        "pcap": {
+                            "Type": "any",
+                            "Value": "/opt/mov.ai/user/bags/datavlp16.pcap"
+                        },
+                        "port": {
+                            "Type": "any",
+                            "Value": "$(flow port)"
+                        }
+                    },
+                    "Persistent": false,
+                    "Remappable": true,
+                    "Template": "velodyne_driver",
+                    "Visualization": {
+                        "x": {
+                            "Value": 11.025619506835938
+                        },
+                        "y": {
+                            "Value": 227.648681640625
+                        }
+                    }
+                },
+                "laserscan": {
+                    "Launch": true,
+                    "NodeLabel": "laserscan",
+                    "NodeLayers": [],
+                    "Persistent": false,
+                    "Remappable": true,
+                    "Template": "velodyne_laserscan",
+                    "Visualization": {
+                        "x": {
+                            "Value": 207.12578582763672
+                        },
+                        "y": {
+                            "Value": 439.10040283203125
+                        }
+                    }
+                },
+                "nodelet_manager": {
+                    "Launch": true,
+                    "NodeLabel": "nodelet_manager",
+                    "NodeLayers": [],
+                    "Persistent": false,
+                    "Remappable": true,
+                    "Template": "nodelet_manager",
+                    "Visualization": {
+                        "x": {
+                            "Value": 330.34861177942935
+                        },
+                        "y": {
+                            "Value": 237.39416810332503
+                        }
+                    }
+                },
+                "pointcloud": {
+                    "Launch": true,
+                    "NodeLabel": "pointcloud",
+                    "NodeLayers": [],
+                    "Parameter": {
+                        "fixed_frame": {
+                            "Type": "any",
+                            "Value": "$(flow frame_id)"
+                        },
+                        "target_frame": {
+                            "Type": "any",
+                            "Value": "$(flow frame_id)"
+                        }
+                    },
+                    "Persistent": false,
+                    "Remappable": true,
+                    "Template": "velodyne_cloud",
+                    "Visualization": {
+                        "x": {
+                            "Value": 107.17245864868164
+                        },
+                        "y": {
+                            "Value": 349.119873046875
+                        }
+                    }
+                }
+            },
+            "Parameter": {
+                "frame_id": {
+                    "Description": "The frame representing the LiDAR's position",
+                    "Type": "any",
+                    "Value": "scan_omni"
+                },
+                "port": {
+                    "Description": "Port of the velodyne laser",
+                    "Type": "any",
+                    "Value": "2368"
+                },
+                "remappable": {
+                    "Description": "Flag to set remap property ",
+                    "Type": "any",
+                    "Value": "False"
+                }
+            },
+            "User": null,
+            "Version": "",
+            "VersionDelta": {}
+        }
+    }
+}

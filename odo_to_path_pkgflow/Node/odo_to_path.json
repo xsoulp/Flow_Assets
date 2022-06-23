@@ -1,0 +1,58 @@
+{
+    "Node": {
+        "odo_to_path": {
+            "Info": "",
+            "Label": "odo_to_path",
+            "LastUpdate": {
+                "date": "23/06/2022 at 15:37:28",
+                "user": "movai"
+            },
+            "Launch": true,
+            "PackageDepends": "",
+            "Path": "",
+            "Persistent": false,
+            "PortsInst": {
+                "entry": {
+                    "In": {
+                        "in": {
+                            "Callback": "odo_to_path_entry_cb",
+                            "Message": "movai_msgs/Transition"
+                        }
+                    },
+                    "Info": "",
+                    "Message": "Transition",
+                    "Package": "movai_msgs",
+                    "Template": "MovAI/TransitionTo"
+                },
+                "odometry_in": {
+                    "In": {
+                        "in": {
+                            "Callback": "odo_to_path_cb",
+                            "Message": "nav_msgs/Odometry"
+                        }
+                    },
+                    "Info": "",
+                    "Message": "Odometry",
+                    "Package": "nav_msgs",
+                    "Template": "ROS1/Subscriber"
+                },
+                "path_out": {
+                    "Info": "",
+                    "Message": "Path",
+                    "Out": {
+                        "out": {
+                            "Message": "nav_msgs/Path"
+                        }
+                    },
+                    "Package": "nav_msgs",
+                    "Template": "ROS1/Publisher"
+                }
+            },
+            "Remappable": true,
+            "Type": "MovAI/State",
+            "User": "",
+            "Version": "",
+            "VersionDelta": {}
+        }
+    }
+}

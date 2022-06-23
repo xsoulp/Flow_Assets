@@ -1,0 +1,68 @@
+{
+    "Node": {
+        "ros2_1_bridge": {
+            "CmdLine": {
+                "args": {
+                    "Description": "",
+                    "Value": "--ros-args"
+                }
+            },
+            "EnvVar": {
+                "LD_LIBRARY_PATH": {
+                    "Description": "",
+                    "Value": "/opt/ros/noetic/lib:/opt/ros/foxy/lib:/opt/ros/foxy/lib/x86_64-linux-gnu"
+                },
+                "ROS_DOMAIN_ID": {
+                    "Description": "",
+                    "Value": "5"
+                }
+            },
+            "Info": "ros2 bridge",
+            "Label": "ros2_1_bridge",
+            "LastUpdate": {
+                "date": "15/06/2022 at 14:42:20",
+                "user": "movai"
+            },
+            "Launch": true,
+            "PackageDepends": "",
+            "Parameter": {
+                "_remappable": {
+                    "Description": "",
+                    "Type": "any",
+                    "Value": "false"
+                }
+            },
+            "Path": "/../../foxy/lib/ros1_bridge/dynamic_bridge",
+            "Persistent": false,
+            "PortsInst": {
+                "dummy": {
+                    "Info": "",
+                    "Message": "VoxelGrid",
+                    "Out": {
+                        "out": {
+                            "Message": "costmap_2d/VoxelGrid"
+                        }
+                    },
+                    "Package": "costmap_2d",
+                    "Template": "ROS1/Publisher"
+                },
+                "entry_depen_br": {
+                    "In": {
+                        "in": {
+                            "Message": "movai_msgs/Dependency"
+                        }
+                    },
+                    "Info": "",
+                    "Message": "Dependency",
+                    "Package": "movai_msgs",
+                    "Template": "MovAI/Dependency"
+                }
+            },
+            "Remappable": true,
+            "Type": "ROS1/Node",
+            "User": "",
+            "Version": "",
+            "VersionDelta": {}
+        }
+    }
+}

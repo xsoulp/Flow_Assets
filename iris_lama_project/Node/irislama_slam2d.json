@@ -1,0 +1,221 @@
+{
+    "Node": {
+        "irislama_slam2d": {
+            "Info": "",
+            "Label": "irislama_slam2d",
+            "LastUpdate": {
+                "date": "21/05/2022 at 17:41:09",
+                "user": "movai"
+            },
+            "Launch": true,
+            "PackageDepends": "",
+            "Parameter": {
+                "~a_thresh": {
+                    "Description": "Angular motion to accumulate before updating",
+                    "Type": "any",
+                    "Value": "0.25"
+                },
+                "~base_frame_id": {
+                    "Description": "The frame attached to the mobile base",
+                    "Type": "any",
+                    "Value": "\"base_link\""
+                },
+                "~beam_step": {
+                    "Description": "Number of beams to step (or skip) in each scan",
+                    "Type": "any",
+                    "Value": "1"
+                },
+                "~cache_size": {
+                    "Description": "Size of the LRU used during online data compression",
+                    "Type": "any",
+                    "Value": "100"
+                },
+                "~compression_algorithm": {
+                    "Description": "Compression algorithm to use. lz4 or zstd",
+                    "Type": "any",
+                    "Value": "lz4"
+                },
+                "~create_summary": {
+                    "Description": "",
+                    "Type": "any",
+                    "Value": "false"
+                },
+                "~d_thresh": {
+                    "Description": "Traveled distance to accumulate before updating",
+                    "Type": "any",
+                    "Value": "0.01"
+                },
+                "~global_frame_id": {
+                    "Description": "The frame attached to the map",
+                    "Type": "any",
+                    "Value": "\"map\""
+                },
+                "~initial_pos_a": {
+                    "Description": "Initial rotation (or angle)",
+                    "Type": "any",
+                    "Value": "0"
+                },
+                "~initial_pos_x": {
+                    "Description": "Initial x position",
+                    "Type": "any",
+                    "Value": "0"
+                },
+                "~initial_pos_y": {
+                    "Description": "Initial y position",
+                    "Type": "any",
+                    "Value": "0"
+                },
+                "~l2_max": {
+                    "Description": "Maximum distance to use in the dynamic Euclidean distance map",
+                    "Type": "any",
+                    "Value": "0.5"
+                },
+                "~map_publish_period": {
+                    "Description": "How long between updates to the map",
+                    "Type": "any",
+                    "Value": "5"
+                },
+                "~max_iterations": {
+                    "Description": "Maximum number of iterations performed by the optimizer",
+                    "Type": "any",
+                    "Value": "100"
+                },
+                "~mrange": {
+                    "Description": "Maximum laser scan range",
+                    "Type": "any",
+                    "Value": "16"
+                },
+                "~odom_frame_id": {
+                    "Description": "The frame attached to the odometry system",
+                    "Type": "any",
+                    "Value": "\"odom\""
+                },
+                "~patch_size": {
+                    "Description": "Length of a patch, in cells",
+                    "Type": "any",
+                    "Value": "32"
+                },
+                "~resolution": {
+                    "Description": "Resolution of the grid maps",
+                    "Type": "any",
+                    "Value": "0.05"
+                },
+                "~scan_topic": {
+                    "Description": "Laser scan topic to subscribe",
+                    "Type": "any",
+                    "Value": "\"scan\""
+                },
+                "~strategy": {
+                    "Description": "Scan matching optimization strategy. GaussNewton (\"gm\") or Levenberg Marquard (\"lm\")",
+                    "Type": "any",
+                    "Value": "\"gm\""
+                },
+                "~transform_tolerance": {
+                    "Description": "Defines how long map->odom transform is good for by future dating tf",
+                    "Type": "any",
+                    "Value": "0.1"
+                },
+                "~transient_map": {
+                    "Description": "True to only keep the most recent portion of the map \"sensed\" by the latest surface \"",
+                    "Type": "any",
+                    "Value": "false"
+                },
+                "~truncate": {
+                    "Description": "Truncate the laser scan range from start to \"middle\"",
+                    "Type": "any",
+                    "Value": "0.0"
+                },
+                "~truncate_ray": {
+                    "Description": "Truncate the laser scan range (or ray) from \"middle\" to end",
+                    "Type": "any",
+                    "Value": "0.0"
+                },
+                "~update_min_a": {
+                    "Description": "\u03c0/6.0 radians",
+                    "Type": "any",
+                    "Value": "0.5235"
+                },
+                "~use_compression": {
+                    "Description": "Should the maps be compressed",
+                    "Type": "any",
+                    "Value": "false"
+                }
+            },
+            "Path": "/iris_lama_ros/slam2d_ros",
+            "Persistent": true,
+            "PortsInst": {
+                "distance": {
+                    "Info": "",
+                    "Message": "OccupancyGrid",
+                    "Out": {
+                        "out": {
+                            "Message": "nav_msgs/OccupancyGrid"
+                        }
+                    },
+                    "Package": "nav_msgs",
+                    "Template": "ROS1/Publisher"
+                },
+                "map": {
+                    "Info": "",
+                    "Message": "OccupancyGrid",
+                    "Out": {
+                        "out": {
+                            "Message": "nav_msgs/OccupancyGrid"
+                        }
+                    },
+                    "Package": "nav_msgs",
+                    "Template": "ROS1/Publisher"
+                },
+                "patch": {
+                    "Info": "poses_(geometry_msgs/PoseArray)",
+                    "Message": "OccupancyGrid",
+                    "Out": {
+                        "out": {
+                            "Message": "nav_msgs/OccupancyGrid"
+                        }
+                    },
+                    "Package": "nav_msgs",
+                    "Template": "ROS1/Publisher"
+                },
+                "path": {
+                    "Info": "",
+                    "Message": "Path",
+                    "Out": {
+                        "out": {
+                            "Message": "nav_msgs/Path"
+                        }
+                    },
+                    "Package": "nav_msgs",
+                    "Template": "ROS1/Publisher"
+                },
+                "pose": {
+                    "Info": "",
+                    "Message": "PoseWithCovarianceStamped)",
+                    "Out": {
+                        "out": {
+                            "Message": "geometry_msgs/PoseWithCovarianceStamped)"
+                        }
+                    },
+                    "Package": "geometry_msgs",
+                    "Template": "ROS1/Publisher"
+                },
+                "scan": {
+                    "In": {
+                        "in": {
+                            "Message": "sensor_msgs/LaserScan"
+                        }
+                    },
+                    "Info": "",
+                    "Message": "LaserScan",
+                    "Package": "sensor_msgs",
+                    "Template": "ROS1/Subscriber"
+                }
+            },
+            "Remappable": true,
+            "Type": "ROS1/Node",
+            "User": "",
+            "Version": "",
+            "VersionDelta": {}
+        }
+    }
+}

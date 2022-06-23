@@ -1,0 +1,32 @@
+Published Topics
+
+laser_cloud_surround (sensor_msgs/PointCloud2)
+
+laser_cloud_map (sensor_msgs/PointCloud2)
+
+velodyne_cloud_(sensor_msgs/PointCloud2)
+
+aft_mapped_to_init (nav_msgs/Odometry)
+
+aft_mapped_to_init_high_frec (nav_msgs/Odometry)
+
+aft_mapped_path (nav_msgs/Path)
+
+Subscribed Topics
+
+laser_cloud_corner_last (sensor_msgs/PointCloud2)
+laser_cloud_surf_last (sensor_msgs/PointCloud2)
+laser_odom_to_init (nav_msgs/Odometry)
+
+velodyne_cloud_3 (sensor_msgs/PointCloud2)
+
+laser_cloud_sharp (sensor_msgs/PointCloud2)
+
+Parameters
+
+mapping_skip_frame (int, default: 2)
+mapping_line_resolution (float, default: 0.4)
+mapping_plane_resolution (float, default: 0.8)
+
+
+	

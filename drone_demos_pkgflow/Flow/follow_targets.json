@@ -1,0 +1,116 @@
+{
+    "Flow": {
+        "follow_targets": {
+            "Description": "",
+            "ExposedPorts": {
+                "move_xy": {
+                    "move_xy": [
+                        "odometry/in",
+                        "cmd_vel/out"
+                    ]
+                },
+                "target_generator": {
+                    "target_generator": [
+                        "exit/out",
+                        "odometry/in"
+                    ]
+                },
+                "wait_state": {
+                    "statemux": [
+                        "entry/in"
+                    ]
+                }
+            },
+            "Info": "",
+            "Label": "follow_targets",
+            "LastUpdate": {
+                "date": "21/06/2022 at 09:42:12",
+                "user": "movai"
+            },
+            "Layers": {},
+            "Links": {
+                "6be16392-ca66-4ec2-932f-ac37faa081b5": {
+                    "Dependency": 0,
+                    "From": "target_generator/targets/out",
+                    "To": "move_xy/targets/in"
+                },
+                "7d46a1fa-bb9f-4501-91f9-82364be280ee": {
+                    "Dependency": 0,
+                    "From": "statemux/exit/out",
+                    "To": "target_generator/entry/in"
+                },
+                "ec2ecb97-1516-4a2e-9910-b076d288bde1": {
+                    "Dependency": 0,
+                    "From": "statemux/exit/out",
+                    "To": "move_xy/entry/in"
+                }
+            },
+            "NodeInst": {
+                "move_xy": {
+                    "Launch": true,
+                    "NodeLabel": "move_xy",
+                    "NodeLayers": [],
+                    "Persistent": false,
+                    "Remappable": true,
+                    "Template": "move_xy",
+                    "Visualization": {
+                        "x": {
+                            "Value": 386.3330993652344
+                        },
+                        "y": {
+                            "Value": 360.888916015625
+                        }
+                    }
+                },
+                "statemux": {
+                    "Launch": true,
+                    "NodeLabel": "statemux",
+                    "NodeLayers": [],
+                    "Parameter": {
+                        "wait_time": {
+                            "Type": "any",
+                            "Value": "0"
+                        }
+                    },
+                    "Persistent": false,
+                    "Remappable": true,
+                    "Template": "wait_state",
+                    "Visualization": {
+                        "x": {
+                            "Value": 122
+                        },
+                        "y": {
+                            "Value": 199
+                        }
+                    }
+                },
+                "target_generator": {
+                    "Launch": true,
+                    "NodeLabel": "target_generator",
+                    "NodeLayers": [],
+                    "Persistent": false,
+                    "Remappable": true,
+                    "Template": "target_generator",
+                    "Visualization": {
+                        "x": {
+                            "Value": 288.2221984863281
+                        },
+                        "y": {
+                            "Value": 237.11117553710938
+                        }
+                    }
+                }
+            },
+            "Parameter": {
+                "file_name": {
+                    "Description": "",
+                    "Type": "any",
+                    "Value": ""
+                }
+            },
+            "User": "",
+            "Version": "",
+            "VersionDelta": {}
+        }
+    }
+}

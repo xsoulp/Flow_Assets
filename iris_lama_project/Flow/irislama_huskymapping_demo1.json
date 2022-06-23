@@ -1,0 +1,138 @@
+{
+    "Flow": {
+        "irislama_huskymapping_demo1": {
+            "Container": {
+                "husky_sim_drivers": {
+                    "ContainerFlow": "husky_sim_drivers",
+                    "ContainerLabel": "husky_sim_drivers",
+                    "Parameter": {
+                        "robot_name": {
+                            "Type": "any",
+                            "Value": "husky"
+                        }
+                    },
+                    "Visualization": {
+                        "x": {
+                            "Value": 0.01404837646484375
+                        },
+                        "y": {
+                            "Value": 0.011087806193033855
+                        }
+                    }
+                },
+                "ign_empty_topic_publisher": {
+                    "ContainerFlow": "ignition_empty_sub",
+                    "ContainerLabel": "ign_empty_topic_publisher",
+                    "Parameter": {
+                        "topic_name": {
+                            "Type": "any",
+                            "Value": "save_map"
+                        }
+                    },
+                    "Visualization": {
+                        "x": {
+                            "Value": 479.8641357421875
+                        },
+                        "y": {
+                            "Value": 254.8776397705078
+                        }
+                    }
+                }
+            },
+            "Description": "Performs the mapping of a location using SLAM with Husky robot. Relies on 2D Lidar and Odometry information. Joystick should be used to move the robot around and to stop the mapping procedure when finished. The default map name is new_map (can be changed on map_saver node parameters in the flow). The generated map is uploaded to the database.",
+            "ExposedPorts": {},
+            "Info": "",
+            "Label": "irislama_huskymapping_demo1",
+            "LastUpdate": {
+                "date": "21/05/2022 at 09:52:57",
+                "user": "movai"
+            },
+            "Layers": {},
+            "Links": {
+                "3574a5eb-f1b6-44dd-b572-e6918d391206": {
+                    "Dependency": 0,
+                    "From": "ign_empty_topic_publisher__remap/empty_msg/out",
+                    "To": "map_saver/trigger/in"
+                },
+                "9b5fe464-9085-42d5-8811-572fefc87cec": {
+                    "Dependency": 0,
+                    "From": "husky_sim_drivers__diffdrive__outputs/odom/out",
+                    "To": "ekf_odom/odom0/in"
+                },
+                "bc3ccbda-b212-482e-941e-5570daac930d": {
+                    "Dependency": 0,
+                    "From": "husky_sim_drivers__imu__output/imu/out",
+                    "To": "ekf_odom/imu0/in"
+                },
+                "bcfc0494-a753-4a0b-bc57-c5d51717a760": {
+                    "Dependency": 0,
+                    "From": "husky_sim_drivers__wait_ready/exit/out",
+                    "To": "ign_empty_topic_publisher__depend/entry/in"
+                },
+                "c93f1052-0849-4415-a9dc-e0c2a0c6d294": {
+                    "Dependency": 0,
+                    "From": "husky_sim_drivers__velodyne__output/scan/out",
+                    "To": "irislama_slam2d/scan/in"
+                },
+                "cd63fc1e-4b08-4a1b-8732-68da8f02442f": {
+                    "Dependency": 0,
+                    "From": "start/start/start",
+                    "To": "husky_sim_drivers__init_sim__get_params/entry/in"
+                }
+            },
+            "NodeInst": {
+                "ekf_odom": {
+                    "Launch": true,
+                    "NodeLabel": "ekf_odom",
+                    "NodeLayers": [],
+                    "Persistent": false,
+                    "Remappable": true,
+                    "Template": "ekf_odom",
+                    "Visualization": {
+                        "x": {
+                            "Value": 335
+                        },
+                        "y": {
+                            "Value": 54
+                        }
+                    }
+                },
+                "irislama_slam2d": {
+                    "Launch": true,
+                    "NodeLabel": "irislama_slam2d",
+                    "NodeLayers": [],
+                    "Persistent": false,
+                    "Remappable": true,
+                    "Template": "irislama_slam2d",
+                    "Visualization": {
+                        "x": {
+                            "Value": 509.016845703125
+                        },
+                        "y": {
+                            "Value": 114.16873168945312
+                        }
+                    }
+                },
+                "map_saver": {
+                    "Launch": true,
+                    "NodeLabel": "map_saver",
+                    "NodeLayers": [],
+                    "Persistent": false,
+                    "Remappable": true,
+                    "Template": "map_saver",
+                    "Visualization": {
+                        "x": {
+                            "Value": 0.044808101399739585
+                        },
+                        "y": {
+                            "Value": 0.00848888651529948
+                        }
+                    }
+                }
+            },
+            "User": "",
+            "Version": "",
+            "VersionDelta": {}
+        }
+    }
+}

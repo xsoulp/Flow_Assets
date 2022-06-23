@@ -1,0 +1,28 @@
+Published Topics
+
+velodyne_packets (velodyne_msgs/VelodyneScan)
+Velodyne data packets - typically for one entire revolution of the device) in the /velodyne frame of reference. 
+
+diagnostics (diagnostic_msgs/DiagnosticStatus
+Diagnostic status information. 
+
+Parameters
+
+calibration (string, default: $(find velodyne_pointcloud)/params/VLP16db.yaml)
+device_ip (string, default: )
+frame_id (string, default: velodyne)
+manager (string, default: $(arg frame_id)_nodelet_manager)
+max_range (string, default: 130.0)
+min_range (string, default: 0.4)
+pcap (string, default: ./datavlp16.pcap)
+port (string, default: 2368)
+read_fast (string, default: false)
+read_once (string, default: false)
+repeat_delay (string, default: 0.0)
+rpm (string, default: 600.0)
+gps_time (string, default: false)
+cut_angle (string, default: -0.01)
+timestamp_first_packet (string, default: false)
+laserscan_ring (string, default: -1)
+laserscan_resolution (string, default: 0.007)
+organize_cloud (string, default: false)

@@ -1,0 +1,117 @@
+Subscribed Topics
+scan (sensor_msgs/LaserScan)
+
+Published Topics
+pose (geometry_msgs/PoseWithCovarianceStamped) 
+map (nav_msgs/OccupancyGrid)
+distance (nav_msgs/OccupancyGrid)
+patch (nav_msgs/OccupancyGrid)
+poses_(geometry_msgs/PoseArray)
+path (nav_msgs/Path)
+
+
+Parameters
+~update_min_a (double, default: 0.5235)
+π/6.0 radians
+
+~global_frame_id (string, default: "map")
+The frame attached to the map 
+
+~odom_frame_id (string, default: "odom")
+The frame attached to the odometry system 
+
+~base_frame_id (string, default: "base_link")
+The frame attached to the mobile base 
+
+~scan_topic (string, default: "scan")
+Laser scan topic to subscribe 
+
+~transform_tolerance (string, default: 0.1)
+Defines how long map->odom transform is good for by future dating tf 
+
+~initial_pos_x (string, default: 0)
+Initial x position 
+
+~initial_pos_y (string, default: 0)
+Initial y position 
+
+~initial_pos_a (string, default: 0)
+Initial rotation (or angle) 
+
+~a_thresh (string, default: 0.25)
+Angular motion to accumulate before updating 
+
+~l2_max (string, default: 0.5)
+Maximum distance to use in the dynamic Euclidean distance map 
+
+~resolution (string, default: 0.05)
+Resolution of the grid maps 
+
+~patch_size (string, default: 32)
+Length of a patch, in cells 
+
+~strategy (string, default: "gm"
+Scan matching optimization strategy. GaussNewton ("gm") or Levenberg Marquard ("lm") 
+
+~max_iterations (string, default: 100)
+Maximum number of iterations performed by the optimizer 
+
+~use_compression (string, default: false)
+Should the maps be compressed 
+
+~compression_algorithm (string, default: lz4)
+Compression algorithm to use. lz4 or zstd 
+
+~cache_size (string, default: 100)
+Size of the LRU used during online data compression 
+
+~mrange (string, default: 16)
+Maximum laser scan range 
+
+~beam_step (string, default: 1)
+Number of beams to step (or skip) in each scan 
+
+~truncate (string, default: 0.0)
+Truncate the laser scan range from start to "middle" 
+
+~truncate_ray (string, default: 0.0)
+Truncate the laser scan range (or ray) from "middle" to end 
+
+~map_publish_period (string, default: 5)
+How long between updates to the map 
+
+~transient_map (string, default: false)
+True to only keep the most recent portion of the map "sensed" by the latest surface "
+
+~create_summary (string, default: false)
+
+~d_thresh (string, default: 0.5)
+Traveled distance to accumulate before updating 
+
+~particles (string, default: 30)
+Number of particles to use 
+
+~seed (string, default: 0)
+RNG seed value. use 0 for a random seed from device 
+
+~threads (string, default: -1)
+Number of working threads. -1 means disabled and 0 will expand to the available number of cores 
+
+~sigma (string, default: 0.05)
+Measurement variance 
+
+~lgain (string, default: 3.0)
+Gain value for smoothing the particles likelihood 
+
+~srr (string, default: 0.1)
+Odometry error in rotation as a function of rotation 
+
+~str (string, default: 0.2)
+Odometry error in rotation as a function of translation 
+
+~stt (string, default: 0.1)
+Odometry error in translation as a function of translation 
+
+~srt (string, default: 0.1)
+Odometry error in translation as a function of rotation 
+

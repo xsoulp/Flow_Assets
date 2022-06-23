@@ -1,0 +1,220 @@
+{
+    "Node": {
+        "irislama_loc2d": {
+            "Info": "",
+            "Label": "irislama_loc2d",
+            "LastUpdate": {
+                "date": "21/05/2022 at 17:40:46",
+                "user": "movai"
+            },
+            "Launch": true,
+            "PackageDepends": "",
+            "Parameter": {
+                "a_thresh": {
+                    "Description": "",
+                    "Type": "any",
+                    "Value": "0.2"
+                },
+                "base_frame_id": {
+                    "Description": "info",
+                    "Type": "any",
+                    "Value": "\"base_link\""
+                },
+                "beam_step": {
+                    "Description": "",
+                    "Type": "any",
+                    "Value": "1"
+                },
+                "covariance_blend": {
+                    "Description": "",
+                    "Type": "any",
+                    "Value": "0.0"
+                },
+                "d_thresh": {
+                    "Description": "",
+                    "Type": "any",
+                    "Value": "0.1"
+                },
+                "do_global_loc": {
+                    "Description": "",
+                    "Type": "any",
+                    "Value": "false"
+                },
+                "first_map_only": {
+                    "Description": "info",
+                    "Type": "any",
+                    "Value": "false"
+                },
+                "force_update_on_initial_pose": {
+                    "Description": "info",
+                    "Type": "any",
+                    "Value": "false"
+                },
+                "global_frame_id": {
+                    "Description": "info",
+                    "Type": "any",
+                    "Value": "\"map\""
+                },
+                "gloc_iters": {
+                    "Description": "",
+                    "Type": "any",
+                    "Value": "20"
+                },
+                "gloc_particles": {
+                    "Description": "",
+                    "Type": "any",
+                    "Value": "3000"
+                },
+                "gloc_thresh": {
+                    "Description": "",
+                    "Type": "any",
+                    "Value": "0.15"
+                },
+                "initial_pos_a": {
+                    "Description": "",
+                    "Type": "any",
+                    "Value": "0.0"
+                },
+                "initial_pos_x": {
+                    "Description": "",
+                    "Type": "any",
+                    "Value": "0.0"
+                },
+                "initial_pos_y": {
+                    "Description": "",
+                    "Type": "any",
+                    "Value": "0.0"
+                },
+                "l2_max": {
+                    "Description": "",
+                    "Type": "any",
+                    "Value": "0.5"
+                },
+                "map_sideloading_dir": {
+                    "Description": "info",
+                    "Type": "any",
+                    "Value": "\"\""
+                },
+                "mrange": {
+                    "Description": "",
+                    "Type": "any",
+                    "Value": "0.0"
+                },
+                "odom_frame_id": {
+                    "Description": "info",
+                    "Type": "any",
+                    "Value": "\"odom\""
+                },
+                "patch_size": {
+                    "Description": "",
+                    "Type": "any",
+                    "Value": "32"
+                },
+                "publish_tf": {
+                    "Description": "info",
+                    "Type": "any",
+                    "Value": "true"
+                },
+                "scan_topic": {
+                    "Description": "info",
+                    "Type": "any",
+                    "Value": "\"scan\""
+                },
+                "strategy": {
+                    "Description": "",
+                    "Type": "any",
+                    "Value": "\"gn\""
+                },
+                "temporal_update": {
+                    "Description": "info",
+                    "Type": "any",
+                    "Value": "0.0"
+                },
+                "transform_tolerance": {
+                    "Description": "info",
+                    "Type": "any",
+                    "Value": "0.1"
+                },
+                "use_map_sideloading": {
+                    "Description": "info",
+                    "Type": "any",
+                    "Value": "false"
+                },
+                "use_map_topic": {
+                    "Description": "info",
+                    "Type": "any",
+                    "Value": "false"
+                },
+                "use_pose_on_new_map": {
+                    "Description": "info",
+                    "Type": "any",
+                    "Value": "false"
+                }
+            },
+            "Path": "/iris_lama_ros/loc2d_ros",
+            "Persistent": true,
+            "PortsInst": {
+                "global_localization": {
+                    "In": {
+                        "in": {
+                            "Message": "std_srvs/Empty"
+                        }
+                    },
+                    "Info": "",
+                    "Message": "Empty",
+                    "Package": "std_srvs",
+                    "Template": "ROS1/ServiceServer"
+                },
+                "map": {
+                    "In": {
+                        "in": {
+                            "Message": "nav_msgs/OccupancyGrid"
+                        }
+                    },
+                    "Info": "",
+                    "Message": "OccupancyGrid",
+                    "Package": "nav_msgs",
+                    "Template": "ROS1/Subscriber"
+                },
+                "pose": {
+                    "Info": "some info about the map",
+                    "Message": "PoseWithCovarianceStamped",
+                    "Out": {
+                        "out": {
+                            "Message": "geometry_msgs/PoseWithCovarianceStamped"
+                        }
+                    },
+                    "Package": "geometry_msgs",
+                    "Template": "ROS1/Publisher"
+                },
+                "request_nomotion_update": {
+                    "In": {
+                        "in": {
+                            "Message": "std_srvs/Empty"
+                        }
+                    },
+                    "Info": "",
+                    "Message": "Empty",
+                    "Package": "std_srvs",
+                    "Template": "ROS1/ServiceServer"
+                },
+                "scan": {
+                    "In": {
+                        "in": {
+                            "Message": "sensor_msgs/LaserScan"
+                        }
+                    },
+                    "Info": "the first pose",
+                    "Message": "LaserScan",
+                    "Package": "sensor_msgs",
+                    "Template": "ROS1/Subscriber"
+                }
+            },
+            "Remappable": true,
+            "Type": "ROS1/Node",
+            "User": "",
+            "Version": "",
+            "VersionDelta": {}
+        }
+    }
+}

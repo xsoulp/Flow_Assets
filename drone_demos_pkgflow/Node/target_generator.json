@@ -1,0 +1,97 @@
+{
+    "Node": {
+        "target_generator": {
+            "Info": "",
+            "Label": "target_generator",
+            "LastUpdate": {
+                "date": "21/06/2022 at 09:26:53",
+                "user": "movai"
+            },
+            "Launch": true,
+            "PackageDepends": "",
+            "Parameter": {
+                "file_name": {
+                    "Description": "",
+                    "Type": "any",
+                    "Value": "$(flow file_name)"
+                },
+                "robot_name": {
+                    "Description": "",
+                    "Type": "any",
+                    "Value": "X4"
+                }
+            },
+            "Path": "",
+            "Persistent": false,
+            "PortsInst": {
+                "entry": {
+                    "In": {
+                        "in": {
+                            "Callback": "target_gen_entry_2",
+                            "Message": "movai_msgs/Transition"
+                        }
+                    },
+                    "Info": "",
+                    "Message": "Transition",
+                    "Package": "movai_msgs",
+                    "Template": "MovAI/TransitionTo"
+                },
+                "exit": {
+                    "Info": "",
+                    "Message": "Transition",
+                    "Out": {
+                        "out": {
+                            "Message": "movai_msgs/Transition"
+                        }
+                    },
+                    "Package": "movai_msgs",
+                    "Template": "MovAI/TransitionFor"
+                },
+                "loop": {
+                    "In": {
+                        "in": {
+                            "Callback": "target_gen_loop2",
+                            "Message": "movai_msgs/Timer",
+                            "Parameter": {
+                                "Frequency": "3",
+                                "Oneshot": false
+                            }
+                        }
+                    },
+                    "Info": "",
+                    "Message": "Timer",
+                    "Package": "movai_msgs",
+                    "Template": "ROS1/Timer"
+                },
+                "odometry": {
+                    "In": {
+                        "in": {
+                            "Callback": "move_xy_odom_sub",
+                            "Message": "nav_msgs/Odometry"
+                        }
+                    },
+                    "Info": "",
+                    "Message": "Odometry",
+                    "Package": "nav_msgs",
+                    "Template": "ROS1/Subscriber"
+                },
+                "targets": {
+                    "Info": "",
+                    "Message": "Point",
+                    "Out": {
+                        "out": {
+                            "Message": "geometry_msgs/Point"
+                        }
+                    },
+                    "Package": "geometry_msgs",
+                    "Template": "ROS1/Publisher"
+                }
+            },
+            "Remappable": true,
+            "Type": "MovAI/State",
+            "User": "",
+            "Version": "",
+            "VersionDelta": {}
+        }
+    }
+}
